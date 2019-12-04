@@ -1,0 +1,5 @@
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\AdventOfCode.exe
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\AdventOfCode.pdb
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.csprojAssemblyReference.cache
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.exe
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.pdb
