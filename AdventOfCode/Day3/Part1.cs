@@ -12,19 +12,31 @@ namespace AdventOfCode.Day3
             var instructions1 = Parse (Data.Instructions1);
             var instructions2 = Parse (Data.Instructions2);
 
+            var (startX, startY, field) = Initialize (instructions1, instructions2);
+
+            var crossPoints = GetIntersections (field, startX, startY, instructions1, instructions2);
+            var manhattans  = ToManhattanDistances (crossPoints, (startX, startY));
+
+            return manhattans.Min ();
+        }
+
+        public static (int StartX, int StartY, int [,] Field) Initialize (List <(Direction Direction, int Count)> instructions1, List <(Direction Direction, int Count)> instructions2)
+        {
             var dimensions = BuildExtreme (CalculateMaxDimensions (instructions1), CalculateMaxDimensions (instructions2));
             var (startX, startY, sizeX, sizeY) = BreakDimensions (dimensions);
 
             var field = new int[sizeX, sizeY];
             InitializeField (field);
 
+            return (startX, startY, field);
+        }
+
+        public static HashSet <(int X, int Y)> GetIntersections (int [,] field, int startX, int startY, List <(Direction Direction, int Count)> instructions1, List <(Direction Direction, int Count)> instructions2)
+        {
             Simulate (field, (startX, startY), instructions1, 1);
             Simulate (field, (startX, startY), instructions2, 2);
 
-            var crossPoints = GetCrossPositions (field);
-            var manhattans  = ToManhattanDistances (crossPoints, (startX, startY));
-
-            return manhattans.Min ();
+            return GetCrossPositions (field);
         }
 
         private static HashSet <int> ToManhattanDistances (HashSet <(int X, int Y)> points, (int X, int Y) startPosition)
@@ -76,7 +88,7 @@ namespace AdventOfCode.Day3
 
         private static void Mark (int [,] field, (int X, int Y) position, int bit) => field [position.X, position.Y] |= bit;
 
-        private static void InitializeField (int [,] field)
+        public static void InitializeField (int [,] field)
         {
             for (var x = 0; x < field.GetLength (0); x++)
                 for (var y = 0; y < field.GetLength (1); y++)
@@ -130,7 +142,7 @@ namespace AdventOfCode.Day3
             return (maxNorth, maxEast, maxSouth, maxWest);
         }
 
-        private static List <(Direction, int)> Parse (List <string> instructions)
+        public static List <(Direction, int)> Parse (List <string> instructions)
             => instructions.Select (s =>
             {
                 Direction direction;

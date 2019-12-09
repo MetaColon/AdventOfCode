@@ -5,7 +5,7 @@ namespace AdventOfCode.Day3
 {
     public static class Data
     {
-        public static List <string> Instructions1 = new List <string>
+        public static readonly List <string> Instructions1 = new List <string>
         {
             "R1006",
             "D541",
@@ -310,7 +310,7 @@ namespace AdventOfCode.Day3
             "R103"
         };
 
-        public static List <string> Instructions2 = new List <string>
+        public static readonly List <string> Instructions2 = new List <string>
         {
             "L1000",
             "D65",
