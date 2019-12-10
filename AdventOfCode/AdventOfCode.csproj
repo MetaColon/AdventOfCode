@@ -49,8 +49,12 @@
     <Compile Include="Day3\Part1.cs" />
     <Compile Include="Day3\Part2.cs" />
     <Compile Include="Day4\Data.cs" />
+    <Compile Include="Day4\Matcher.cs" />
     <Compile Include="Day4\Part1.cs" />
+    <Compile Include="Day4\Part1Matcher.cs" />
     <Compile Include="Day4\Part2.cs" />
+    <Compile Include="Day4\Part2Matcher.cs" />
+    <Compile Include="Day4\SecureContainerMatcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
