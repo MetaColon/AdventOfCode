@@ -12,7 +12,7 @@ namespace AdventOfCode.Day2
                 for (var verb = 0; verb < 100; verb++)
                 {
                     var code = Initialize (Data.Program, noun, verb);
-                    Part1.Execute (code);
+                    new ArithmeticComputer (code).Execute ();
                     var res = code [0];
 
                     if (res == 19690720)

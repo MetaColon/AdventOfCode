@@ -41,6 +41,8 @@
     <Compile Include="Day1\Data.cs" />
     <Compile Include="Day1\Part1.cs" />
     <Compile Include="Day1\Part2.cs" />
+    <Compile Include="Day2\ArithmeticComputer.cs" />
+    <Compile Include="Day2\Computer.cs" />
     <Compile Include="Day2\Data.cs" />
     <Compile Include="Day2\Part1.cs" />
     <Compile Include="Day2\Part2.cs" />
@@ -55,6 +57,10 @@
     <Compile Include="Day4\Part2.cs" />
     <Compile Include="Day4\Part2Matcher.cs" />
     <Compile Include="Day4\SecureContainerMatcher.cs" />
+    <Compile Include="Day5\Data.cs" />
+    <Compile Include="Day5\Part1.cs" />
+    <Compile Include="Day5\Part2.cs" />
+    <Compile Include="Day5\TestComputer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,6 +15,8 @@
           <e p="Part2.cs" t="Include" />
         </e>
         <e p="Day2" t="Include">
+          <e p="ArithmeticComputer.cs" t="Include" />
+          <e p="Computer.cs" t="Include" />
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
@@ -33,6 +35,12 @@
           <e p="Part2.cs" t="Include" />
           <e p="Part2Matcher.cs" t="Include" />
           <e p="SecureContainerMatcher.cs" t="Include" />
+        </e>
+        <e p="Day5" t="Include">
+          <e p="Data.cs" t="Include" />
+          <e p="Part1.cs" t="Include" />
+          <e p="Part2.cs" t="Include" />
+          <e p="TestComputer.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
