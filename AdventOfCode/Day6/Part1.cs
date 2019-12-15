@@ -8,7 +8,7 @@ namespace AdventOfCode.Day6
     {
         public static int Solve () => CountOrbits (GetObjects (Data.Map));
 
-        private static HashSet <Object> GetObjects (HashSet <string> map)
+        public static HashSet <Object> GetObjects (HashSet <string> map)
         {
             var res = map.SelectMany (s => s.Split (')')).Select (s => new Object (s)).ToHashSet ();
 
