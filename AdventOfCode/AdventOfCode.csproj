@@ -61,6 +61,10 @@
     <Compile Include="Day5\Part1.cs" />
     <Compile Include="Day5\Part2.cs" />
     <Compile Include="Day5\TestComputer.cs" />
+    <Compile Include="Day6\Data.cs" />
+    <Compile Include="Day6\Object.cs" />
+    <Compile Include="Day6\Part1.cs" />
+    <Compile Include="Day6\Part2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
