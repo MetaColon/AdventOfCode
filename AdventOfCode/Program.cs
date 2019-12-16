@@ -1,6 +1,6 @@
 ﻿using System;
 
-using AdventOfCode.Day6;
+using AdventOfCode.Day7;
 
 
 namespace AdventOfCode
@@ -9,7 +9,7 @@ namespace AdventOfCode
     {
         public static void Main (string [] args)
         {
-            Console.WriteLine (Part2.Solve ());
+            Console.WriteLine (Part1.Solve ());
         }
     }
 }

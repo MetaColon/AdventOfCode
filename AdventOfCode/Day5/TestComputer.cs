@@ -38,7 +38,7 @@ namespace AdventOfCode.Day5
                     WriteResult (position, int.Parse (Console.ReadLine () ?? "-1"), length);
                     return position + length + 1;
                 case 4:
-                    Console.WriteLine (string.Join ("", parameters));
+                    Console.WriteLine (parameters [0]);
                     return position + length + 1;
                 case 5:
                     return True (parameters [0]) ? parameters [1] : position + length + 1;

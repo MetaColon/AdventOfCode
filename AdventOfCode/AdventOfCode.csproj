@@ -66,6 +66,10 @@
     <Compile Include="Day6\Object.cs" />
     <Compile Include="Day6\Part1.cs" />
     <Compile Include="Day6\Part2.cs" />
+    <Compile Include="Day7\Data.cs" />
+    <Compile Include="Day7\Part1.cs" />
+    <Compile Include="Day7\Part2.cs" />
+    <Compile Include="Day7\PipedComputer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
