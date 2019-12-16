@@ -7,9 +7,11 @@ namespace AdventOfCode.Day7
 {
     public static class Part1
     {
-        public static int Solve () => Permute (new HashSet <byte> {0, 1, 2, 3, 4}).Select (EvaluateOutputSignal).Max ();
+        public static int Solve () => GetMaxPermutationValue (new HashSet <byte> {0, 1, 2, 3, 4});
 
-        private static HashSet <List <byte>> Permute (HashSet <byte> input)
+        private static int GetMaxPermutationValue (HashSet <byte> numbers) => Permute (numbers).Select (EvaluateOutputSignal).Max ();
+
+        public static HashSet <List <byte>> Permute (HashSet <byte> input)
             => input.Count > 1
                 ? input.SelectMany (b =>
                 {

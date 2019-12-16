@@ -9,7 +9,7 @@ namespace AdventOfCode.Day5
     public class TestComputer : ArithmeticComputer
     {
         /// <inheritdoc />
-        public TestComputer (List <int> code) : base (code)
+        public TestComputer (IEnumerable <int> code) : base (code)
         {
             Lengths.Add (3, 1);
             Lengths.Add (4, 1);

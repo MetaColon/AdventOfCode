@@ -7,7 +7,7 @@ namespace AdventOfCode.Day2
     {
         protected List <int> Code { get; }
 
-        protected Computer (List <int> code) => Code = code;
+        protected Computer (IEnumerable <int> code) => Code = new List <int> (code);
 
         public abstract int Execute ();
     }

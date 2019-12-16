@@ -77,7 +77,7 @@ namespace AdventOfCode.Day2
 
         private static int Multiply (int [] parameters) => parameters.Aggregate ((x, y) => x * y);
 
-        public ArithmeticComputer (List <int> code) : base (code) =>
+        public ArithmeticComputer (IEnumerable <int> code) : base (code) =>
             Lengths = new Dictionary <int, int>
             {
                 {1, 3},

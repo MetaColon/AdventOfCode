@@ -3,3 +3,14 @@ D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\AdventOfCode.pdb
 D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.csprojAssemblyReference.cache
 D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.exe
 D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.pdb
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Buffers.dll
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Collections.Immutable.dll
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Memory.dll
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Numerics.Vectors.dll
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Buffers.xml
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Collections.Immutable.xml
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Memory.xml
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Numerics.Vectors.xml
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Documents\WellThatsFun\AdventOfCode\AdventOfCode\obj\Debug\AdventOfCode.csproj.CopyComplete
