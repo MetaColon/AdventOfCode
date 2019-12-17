@@ -1,6 +1,6 @@
 ﻿using System;
 
-using AdventOfCode.Day7;
+using AdventOfCode.Day8;
 
 
 namespace AdventOfCode

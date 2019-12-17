@@ -94,6 +94,9 @@
     <Compile Include="Day7\Part2.cs" />
     <Compile Include="Day7\PausableComputer.cs" />
     <Compile Include="Day7\PipedComputer.cs" />
+    <Compile Include="Day8\Data.cs" />
+    <Compile Include="Day8\Part1.cs" />
+    <Compile Include="Day8\Part2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
