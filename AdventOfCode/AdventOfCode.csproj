@@ -97,6 +97,10 @@
     <Compile Include="Day8\Data.cs" />
     <Compile Include="Day8\Part1.cs" />
     <Compile Include="Day8\Part2.cs" />
+    <Compile Include="Day9\Data.cs" />
+    <Compile Include="Day9\Part1.cs" />
+    <Compile Include="Day9\Part2.cs" />
+    <Compile Include="Day9\RelativeComputer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

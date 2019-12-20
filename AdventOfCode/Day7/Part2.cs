@@ -8,16 +8,16 @@ namespace AdventOfCode.Day7
 {
     public static class Part2
     {
-        public static int Solve () => GetMaxPermutationValue (new HashSet <byte> {9, 8, 7, 6, 5});
+        public static int Solve () => (int) GetMaxPermutationValue (new HashSet <byte> {9, 8, 7, 6, 5});
 
-        private static int GetMaxPermutationValue (HashSet <byte> numbers) => Part1.Permute (numbers).Select (EvaluateOutputSignalSerial).Max ();
+        private static long GetMaxPermutationValue (HashSet <byte> numbers) => Part1.Permute (numbers).Select (EvaluateOutputSignalSerial).Max ();
 
-        private static int EvaluateOutputSignalSerial (List <byte> permutation)
+        private static long EvaluateOutputSignalSerial (List <byte> permutation)
         {
-            var inputs = new Dictionary <int, Queue <int>> (permutation.Count);
+            var inputs = new Dictionary <int, Queue <long>> (permutation.Count);
             var computers = permutation.Select ((b, i) =>
             {
-                inputs [i] = new Queue <int> (new [] {(int) b});
+                inputs [i] = new Queue <long> (new [] {(long) b});
                 return new PausableComputer (Data.Code);
             }).ToList ();
 
@@ -44,7 +44,7 @@ namespace AdventOfCode.Day7
             }
         }
 
-        private static int EvaluateOutputSignal (List <byte> permutation)
+        private static long EvaluateOutputSignal (List <byte> permutation)
         {
             var computers = permutation.Select (b =>
             {

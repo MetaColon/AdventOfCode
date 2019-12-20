@@ -8,11 +8,11 @@ namespace AdventOfCode.Day7
 {
     public class PipedComputer : TestComputer
     {
-        public Action <int> Reader { private get; set; }
-        public Func <int>   Writer { protected get; set; }
+        public Action<long> Reader { private get; set; }
+        public Func<long> Writer { protected get; set; }
 
         /// <inheritdoc />
-        public PipedComputer (IEnumerable <int> code, Action <int> reader, Func <int> writer) : base (code)
+        public PipedComputer (IEnumerable <int> code, Action<long> reader, Func <long> writer) : base (code)
         {
             Reader = reader;
             Writer = writer;
@@ -21,7 +21,7 @@ namespace AdventOfCode.Day7
         protected PipedComputer (IEnumerable <int> code) : base (code) {}
 
         /// <inheritdoc />
-        protected override int PerformOperation (int position, int length, int opCode, int [] parameters)
+        protected override int PerformOperation (int position, int length, int opCode, long [] parameters)
         {
             switch (Code [position] % 100)
             {

@@ -14,7 +14,7 @@ namespace AdventOfCode.Day2
             var computer = new ArithmeticComputer (code);
             var result = computer.Execute ();
 
-            return result;
+            return (int) result;
         }
 
         private static void Initialize (List <int> code)

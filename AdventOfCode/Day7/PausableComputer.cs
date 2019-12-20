@@ -7,7 +7,7 @@ namespace AdventOfCode.Day7
     public class PausableComputer : PipedComputer
     {
         /// <inheritdoc />
-        public PausableComputer (IEnumerable <int> code, Action <int> reader, Func <int> writer) : base (code, reader, writer) {}
+        public PausableComputer (IEnumerable <int> code, Action <long> reader, Func <long> writer) : base (code, reader, writer) {}
 
         /// <inheritdoc />
         public PausableComputer (IEnumerable <int> code) : base (code) {}
@@ -16,13 +16,13 @@ namespace AdventOfCode.Day7
         public bool Paused { get; set; }
 
         /// <inheritdoc />
-        public override int Execute ()
+        public override long Execute ()
         {
             Position = 0;
             return Run ();
         }
 
-        private int Run ()
+        private long Run ()
         {
             while (Position < Code.Count && Code [Position] != 99)
             {
@@ -36,14 +36,14 @@ namespace AdventOfCode.Day7
 
         public void Pause () => Paused = true;
 
-        public int Resume ()
+        public long Resume ()
         {
             Paused = false;
             return Run ();
         }
 
         /// <inheritdoc />
-        protected override int PerformOperation (int position, int length, int opCode, int [] parameters)
+        protected override int PerformOperation (int position, int length, int opCode, long [] parameters)
         {
             switch (Code [position] % 100)
             {

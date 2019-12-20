@@ -7,8 +7,8 @@ namespace AdventOfCode.Day7
 {
     public class BufferedComputer : PipedComputer
     {
-        private Queue <int> ReadBuffer          { get; } = new Queue <int> ();
-        private Queue <int> WriteBuffer         { get; } = new Queue <int> ();
+        private Queue <long> ReadBuffer          { get; } = new Queue <long> ();
+        private Queue <long> WriteBuffer         { get; } = new Queue <long> ();
         public  Action      WaitForWriteContent { private get; set; }
 
         /// <inheritdoc />
@@ -32,7 +32,7 @@ namespace AdventOfCode.Day7
         }
 
         public bool HasRead () => ReadBuffer.Count > 0;
-        public int  Read ()       => ReadBuffer.Dequeue ();
-        public void Write (int v) => WriteBuffer.Enqueue (v);
+        public long  Read ()       => ReadBuffer.Dequeue ();
+        public void Write (long v) => WriteBuffer.Enqueue (v);
     }
 }
