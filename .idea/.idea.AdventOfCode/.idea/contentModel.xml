@@ -6,25 +6,25 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="AdventOfCode" t="IncludeRecursive">
         <e p="AdventOfCode.csproj" t="IncludeRecursive" />
-        <e p="Day1" t="Include">
+        <e p="Day01" t="Include">
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
         </e>
-        <e p="Day2" t="Include">
+        <e p="Day02" t="Include">
           <e p="ArithmeticComputer.cs" t="Include" />
           <e p="Computer.cs" t="Include" />
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
         </e>
-        <e p="Day3" t="Include">
+        <e p="Day03" t="Include">
           <e p="Data.cs" t="Include" />
           <e p="Direction.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
         </e>
-        <e p="Day4" t="Include">
+        <e p="Day04" t="Include">
           <e p="Data.cs" t="Include" />
           <e p="Matcher.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
@@ -33,20 +33,20 @@
           <e p="Part2Matcher.cs" t="Include" />
           <e p="SecureContainerMatcher.cs" t="Include" />
         </e>
-        <e p="Day5" t="Include">
+        <e p="Day05" t="Include">
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
           <e p="TestComputer.cs" t="Include" />
         </e>
-        <e p="Day6" t="Include">
+        <e p="Day06" t="Include">
           <e p="AdvancedObject.cs" t="Include" />
           <e p="Data.cs" t="Include" />
           <e p="Object.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
         </e>
-        <e p="Day7" t="Include">
+        <e p="Day07" t="Include">
           <e p="BufferedComputer.cs" t="Include" />
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
@@ -54,16 +54,23 @@
           <e p="PausableComputer.cs" t="Include" />
           <e p="PipedComputer.cs" t="Include" />
         </e>
-        <e p="Day8" t="Include">
+        <e p="Day08" t="Include">
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
         </e>
-        <e p="Day9" t="Include">
+        <e p="Day09" t="Include">
           <e p="Data.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
           <e p="RelativeComputer.cs" t="Include" />
+        </e>
+        <e p="Day10" t="Include">
+          <e p="Data.cs" t="Include" />
+          <e p="Logic.cs" t="Include" />
+          <e p="Part1.cs" t="Include" />
+          <e p="Part2.cs" t="Include" />
+          <e p="ReducedPair.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
