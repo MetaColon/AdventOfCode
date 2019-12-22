@@ -42,7 +42,7 @@ namespace AdventOfCode.Day11
                             if (WriteBuffer.Count > 0)
                             {
                                 var e = WriteBuffer.Dequeue();
-                                Debug.WriteLine($"Computer reads {e}");
+                                //Debug.WriteLine($"Computer reads {e}");
                                 return e;
                             }
 
@@ -55,7 +55,7 @@ namespace AdventOfCode.Day11
             {
                 lock (ReadBuffer)
                 {
-                    Debug.WriteLine($"Computer writes {l}");
+                    //Debug.WriteLine($"Computer writes {l}");
                     ReadBuffer.Enqueue(l);
                 }
             };
@@ -70,7 +70,7 @@ namespace AdventOfCode.Day11
                         if (ReadBuffer.Count > 0)
                         {
                             var e = ReadBuffer.Dequeue();
-                            Debug.WriteLine($"User reads {e}");
+                            //Debug.WriteLine($"User reads {e}");
                             return e;
                         }
 
@@ -84,7 +84,7 @@ namespace AdventOfCode.Day11
         {
             lock (WriteBuffer)
             {
-                Debug.WriteLine($"User writes {l}");
+                //Debug.WriteLine($"User writes {l}");
                 WriteBuffer.Enqueue(l);
             }
         }

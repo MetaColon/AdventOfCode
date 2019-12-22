@@ -7,14 +7,15 @@ namespace AdventOfCode.Day11
 {
     public static class Part1
     {
-        public static int Solve() => GetPaintedPanels(Data.Code).Count;
+        public static int Solve() => PaintPanels(Data.Code).Count;
 
-        private static HashSet<(int X, int Y)> GetPaintedPanels(List<long> code)
+        public static HashSet<(int X, int Y)> PaintPanels(List<long> code, HashSet<(int X, int Y)> paintedPanels = null)
         {
             Thread.CurrentThread.Name = "Main";
 
             var fin = new HashSet<(int X, int Y)>();
-            var whitePanels = new HashSet<(int X, int Y)>();
+            if (paintedPanels == null)
+                paintedPanels = new HashSet<(int X, int Y)>();
             var pos = (0, 0);
             var direction = 0; // Up
 
@@ -26,12 +27,12 @@ namespace AdventOfCode.Day11
             {
                 fin.Add(pos);
 
-                computer.Write(Look(pos, whitePanels));
+                computer.Write(Look(pos, paintedPanels));
 
                 var color = (int) computer.Read();
                 if (color == -1)
                     return fin;
-                Draw(pos, color, whitePanels);
+                Draw(pos, color, paintedPanels);
 
                 var rotation = (int) computer.Read();
                 if (rotation == -1)
@@ -44,7 +45,7 @@ namespace AdventOfCode.Day11
             return fin;
         }
 
-        private static int Look((int X, int Y) pos, HashSet<(int X, int Y)> white) => white.Contains(pos) ? 1 : 0;
+        public static int Look((int X, int Y) pos, HashSet<(int X, int Y)> white) => white.Contains(pos) ? 1 : 0;
 
         private static void Draw((int X, int Y) pos, int color, HashSet<(int X, int Y)> white)
         {
