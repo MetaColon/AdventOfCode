@@ -19,6 +19,15 @@ namespace AdventOfCode.Day07
         protected PipedComputer (IEnumerable <int> code) : base (code) {}
 
         /// <inheritdoc />
+        public PipedComputer (IEnumerable <long> code, Action<long> reader, Func <long> writer) : base (code)
+        {
+            Reader = reader;
+            Writer = writer;
+        }
+
+        protected PipedComputer (IEnumerable <long> code) : base (code) {}
+
+        /// <inheritdoc />
         protected override int PerformOperation (int position, int length, int opCode, long [] parameters)
         {
             switch (Code [position] % 100)

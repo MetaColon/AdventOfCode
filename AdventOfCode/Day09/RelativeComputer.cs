@@ -1,14 +1,23 @@
 using System;
 using System.Collections.Generic;
 using AdventOfCode.Day05;
+using AdventOfCode.Day07;
 
 namespace AdventOfCode.Day09
 {
-    public class RelativeComputer : TestComputer
+    public class RelativeComputer : PipedComputer
     {
-        public RelativeComputer(IEnumerable<int> code) : base(code) => Init();
+        public RelativeComputer(IEnumerable<int> code) : base(code)
+            => Init();
 
-        public RelativeComputer(IEnumerable<long> code) : base(code) => Init();
+        public RelativeComputer(IEnumerable<long> code) : base(code, Console.WriteLine, () => long.Parse(Console.ReadLine()))
+            => Init();
+
+        public RelativeComputer(IEnumerable<long> code, Action<long> reader, Func<long> writer) : base(code, reader, writer)
+            => Init();
+
+        public RelativeComputer(IEnumerable<int> code, Action<long> reader, Func<long> writer) : base(code, reader, writer)
+            => Init();
 
         private void Init()
         {
@@ -68,7 +77,7 @@ namespace AdventOfCode.Day09
             var index = GetIndex(GetMode(position, length - 1), position + length);
             EnsureMemory(index);
 
-            Code [index] = value ? 1 : 0;
+            Code[index] = value ? 1 : 0;
         }
     }
 }
