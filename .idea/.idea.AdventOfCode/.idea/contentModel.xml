@@ -78,6 +78,13 @@
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
         </e>
+        <e p="Day12" t="Include">
+          <e p="Data.cs" t="Include" />
+          <e p="Moon.cs" t="Include" />
+          <e p="Part1.cs" t="Include" />
+          <e p="Part2.cs" t="Include" />
+          <e p="TupelUtil.cs" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />

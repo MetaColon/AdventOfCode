@@ -110,6 +110,11 @@
     <Compile Include="Day11\Data.cs" />
     <Compile Include="Day11\Part1.cs" />
     <Compile Include="Day11\Part2.cs" />
+    <Compile Include="Day12\Data.cs" />
+    <Compile Include="Day12\Moon.cs" />
+    <Compile Include="Day12\Part1.cs" />
+    <Compile Include="Day12\Part2.cs" />
+    <Compile Include="Day12\TupelUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
