@@ -8,7 +8,7 @@ namespace AdventOfCode
     {
         public static void Main (string [] args)
         {
-            Console.WriteLine ("Output: " + Part1.Solve ());
+            Console.WriteLine ("Output: " + Part2.Solve ());
         }
     }
 }

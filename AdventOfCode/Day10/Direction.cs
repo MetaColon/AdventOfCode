@@ -1,33 +1,40 @@
 using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace AdventOfCode.Day10
 {
-    public class ReducedPair
+    public class Direction : IComparable<Direction>
     {
-        public ReducedPair(int x, int y)
+        public Direction(int x, int y)
         {
-            X = Math.Abs(x);
-            Y = Math.Abs(y);
+            var signX = Math.Sign(x);
+            var signY = Math.Sign(y);
+
+            X = signX * x;
+            Y = signY * y;
 
             if (X == 0 && Y == 0)
                 return;
 
             if (X == 0)
             {
-                Y = 1;
+                Y = signY;
                 return;
             }
 
             if (Y == 0)
             {
-                X = 1;
+                X = signX;
                 return;
             }
 
             var divisor = Gcd(X, Y);
-            Y /= divisor;
             X /= divisor;
+            Y /= divisor;
+
+            X *= signX;
+            Y *= signY;
         }
 
         public int Gcd(int a, int b)
@@ -47,7 +54,7 @@ namespace AdventOfCode.Day10
 
         public int Y { get; set; }
 
-        public bool InLine(ReducedPair other)
+        public bool InLine(Direction other)
         {
             if (other.X < X)
                 return other.InLine(this);
@@ -58,14 +65,12 @@ namespace AdventOfCode.Day10
             if (!Logic.Xor(other.X > X, other.Y > Y))
                 return false;
 
-            for (var i = 0; other.X >= i * X && other.Y >= i * Y; i++)
-                if (Multiply(i).Equals(other))
-                    return true;
-
-            return false;
+            return Equals(other, false);
         }
 
-        public ReducedPair Multiply(int f)
+        public (int X, int Y) ToPair() => (X, Y);
+
+        public Direction Multiply(int f)
         {
             var copy = Copy();
             copy.X *= f;
@@ -74,18 +79,18 @@ namespace AdventOfCode.Day10
             return copy;
         }
 
-        public ReducedPair Copy() => new ReducedPair(X, Y);
+        public Direction Copy() => new Direction(X, Y);
 
         public double EuclidianNorm() => Math.Sqrt(X * X + Y * Y);
 
-        protected bool Equals(ReducedPair other) => X == other.X && Y == other.Y;
+        protected bool Equals(Direction other, bool sign = true) => (X == other.X || !sign && -X == other.X) && (Y == other.Y || !sign && -Y == other.Y);
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((ReducedPair) obj);
+            return Equals((Direction) obj);
         }
 
         public override int GetHashCode()
@@ -97,5 +102,11 @@ namespace AdventOfCode.Day10
         }
 
         public override string ToString() => $"{X},{Y}";
+
+        public double GetAngle() => Normalize(Math.Atan2(-Y, -X) - Math.PI / 2);
+
+        private static double Normalize(double angle) => angle < 0 ? Normalize(angle + Math.PI * 2) : angle > Math.PI * 2 ? Normalize(angle - Math.PI * 2) : angle;
+
+        public int CompareTo(Direction other) => GetAngle().CompareTo(other.GetAngle());
     }
 }

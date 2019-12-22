@@ -67,10 +67,10 @@
         </e>
         <e p="Day10" t="Include">
           <e p="Data.cs" t="Include" />
+          <e p="Direction.cs" t="Include" />
           <e p="Logic.cs" t="Include" />
           <e p="Part1.cs" t="Include" />
           <e p="Part2.cs" t="Include" />
-          <e p="ReducedPair.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">

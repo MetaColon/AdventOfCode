@@ -9,6 +9,7 @@ namespace AdventOfCode.Day10
     {
         public static int Solve() => GetMaxVisibleAsteroidCount(Parse(Data.Map));
 
+        // Best at 27,19
         private static int GetMaxVisibleAsteroidCount(bool[,] map)
         {
             var max = 0;
@@ -21,18 +22,21 @@ namespace AdventOfCode.Day10
 
                 var value = CountVisibleAsteroids(map, (x, y));
                 if (value > max)
+                {
+                    Debug.WriteLine($"{x},{y}: {value}");
                     max = value;
+                }
             }
 
             return max - 1;
         }
 
-        private static ReducedPair[,] CreateReducedDistanceMap((int X, int Y) pos, (int X, int Y) size)
+        private static Direction[,] CreateReducedDistanceMap((int X, int Y) pos, (int X, int Y) size)
         {
-            var fin = new ReducedPair[size.X, size.Y];
+            var fin = new Direction[size.X, size.Y];
             for (var x = 0; x < size.X; x++)
             for (var y = 0; y < size.Y; y++)
-                fin[x, y] = new ReducedPair(x - pos.X, y - pos.Y);
+                fin[x, y] = new Direction(x - pos.X, y - pos.Y);
 
             return fin;
         }
@@ -50,7 +54,7 @@ namespace AdventOfCode.Day10
                 => Enumerable.Range(0, map.GetLength(1)).Count(y
                     => map[x, y]));
 
-        private static bool[,] RemoveBlocked(bool[,] map, ReducedPair[,] fractions, (int X, int Y) pos)
+        private static bool[,] RemoveBlocked(bool[,] map, Direction[,] fractions, (int X, int Y) pos)
         {
             var fin = Copy(map);
 
@@ -60,7 +64,7 @@ namespace AdventOfCode.Day10
                 if (!fin[x, y] || x == pos.X && y == pos.Y)
                     continue;
 
-                var similar = SimilarFractions((x, y), fractions);
+                var similar = SimilarDirections((x, y), fractions);
 
                 foreach (var sim in similar)
                 {
@@ -80,7 +84,7 @@ namespace AdventOfCode.Day10
             return fin;
         }
 
-        private static T[,] Copy<T>(T[,] a)
+        public static T[,] Copy<T>(T[,] a)
         {
             var fin = new T[a.GetLength(0), a.GetLength(1)];
 
@@ -94,7 +98,7 @@ namespace AdventOfCode.Day10
         private static bool SameQuadrant((int X, int Y) a, (int X, int Y) b, (int X, int Y) center)
             => Logic.Xor(a.X > center.X, b.X > center.X) && Logic.Xor(a.Y > center.Y, b.Y > center.Y);
 
-        private static IEnumerable<(int X, int Y)> SimilarFractions((int X, int Y) pos, ReducedPair[,] fractions)
+        public static IEnumerable<(int X, int Y)> SimilarDirections((int X, int Y) pos, Direction[,] fractions)
         {
             for (var x = 0; x < fractions.GetLength(0); x++)
             for (var y = 0; y < fractions.GetLength(1); y++)
@@ -104,7 +108,7 @@ namespace AdventOfCode.Day10
 
         private static double Distance((int X, int Y) a, (int X, int Y) b) => Math.Sqrt((a.X - b.X) * (a.X - b.X) + (a.Y - b.Y) * (a.Y - b.Y));
 
-        private static bool[,] Parse(string raw)
+        public static bool[,] Parse(string raw)
         {
             var lines = raw.Split('\n');
             var fin = new bool [lines[0].Length, lines.Length];

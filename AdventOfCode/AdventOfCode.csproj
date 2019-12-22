@@ -103,7 +103,7 @@
     <Compile Include="Day09\RelativeComputer.cs" />
     <Compile Include="Day10\Data.cs" />
     <Compile Include="Day10\Logic.cs" />
-    <Compile Include="Day10\ReducedPair.cs" />
+    <Compile Include="Day10\Direction.cs" />
     <Compile Include="Day10\Part2.cs" />
     <Compile Include="Day10\Part1.cs" />
     <Compile Include="Program.cs" />
